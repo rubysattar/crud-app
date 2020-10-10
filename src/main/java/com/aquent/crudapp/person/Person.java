@@ -1,13 +1,17 @@
 package com.aquent.crudapp.person;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+//import java.lang.reflect.Constructor;
 
 /**
  * The person entity corresponding to the "person" table in the database.
  */
+@EntityScan
 public class Person {
-
+//    Persistent fields
     private Integer personId;
 
     @NotNull
@@ -37,6 +41,19 @@ public class Person {
     @NotNull
     @Size(min = 5, max = 5, message = "Zip code is required with length 5")
     private String zipCode;
+
+//    public Person(Integer personId, String firstName, String lastName, String emailAddress, String streetAddress, String city, String state, String zipCode) {
+//        this.personId = personId;
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.emailAddress = emailAddress;
+//        this.streetAddress = streetAddress;
+//        this.city = city;
+//        this.state = state;
+//        this.zipCode = zipCode;
+//    }
+
+    public Person(){}
 
     public Integer getPersonId() {
         return personId;
