@@ -59,6 +59,11 @@
       <artifactId>hibernate-validator</artifactId>
       <version>5.2.1.Final</version>
     </dependency>
+    <dependency>
+      <groupId>com.github.livesense</groupId>
+      <artifactId>org.liveSense.misc.javax.persistence</artifactId>
+      <version>1.0.5</version>
+    </dependency>
   </dependencies>
 
   <build>

@@ -1,9 +1,13 @@
 package com.aquent.crudapp.person;
 
+import com.aquent.crudapp.client.Client;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 //import java.lang.reflect.Constructor;
 
 /**
@@ -12,6 +16,8 @@ import javax.validation.constraints.Size;
 @EntityScan
 public class Person {
 //    Persistent fields
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer personId;
 
     @NotNull
@@ -41,6 +47,11 @@ public class Person {
     @NotNull
     @Size(min = 5, max = 5, message = "Zip code is required with length 5")
     private String zipCode;
+
+//    person has one-to-many relationship with clients:
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "person_id", referencedColumnName = "personId")
+    List<Client> clients = new ArrayList<>();
 
 //    public Person(Integer personId, String firstName, String lastName, String emailAddress, String streetAddress, String city, String state, String zipCode) {
 //        this.personId = personId;
