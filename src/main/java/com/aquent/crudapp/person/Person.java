@@ -53,6 +53,13 @@ public class Person {
     @JoinColumn(name = "person_id", referencedColumnName = "personId")
     List<Client> clients = new ArrayList<>();
 
+    public List<Client> getClients() {
+        return clients;
+    }
+
+    public void setClients(List<Client> clients) {
+        this.clients = clients;
+    }
 //    public Person(Integer personId, String firstName, String lastName, String emailAddress, String streetAddress, String city, String state, String zipCode) {
 //        this.personId = personId;
 //        this.firstName = firstName;

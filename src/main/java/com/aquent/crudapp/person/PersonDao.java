@@ -46,4 +46,6 @@ public interface PersonDao {
      * @param id the person ID
      */
     void deletePerson(Integer id);
+
+//    May need to define a way to list all clients on a person here.. This is then passed into JdbcPersonDao class
 }
