@@ -24,3 +24,6 @@ Add client­side styling and validation:
 
 * Using your preferred javascript validation technique, prevent the submission on invalid data on the edit forms and inform the user of errors. The validations implemented on the front­end should be equivalent to the existing server side validation.
 * Add standard styling to the pages using a modern CSS3/HTML5 framework like Twitter Bootstrap or Foundation (or similar).
+
+# My Planning
+![Engineering projects (8) copy](https://media.git.generalassemb.ly/user/27368/files/1f450c80-0be4-11eb-9438-e518b6350617)
