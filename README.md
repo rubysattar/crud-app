@@ -27,3 +27,4 @@ Add client­side styling and validation:
 
 # My Planning
 ![Engineering projects (8) copy](https://media.git.generalassemb.ly/user/27368/files/1f450c80-0be4-11eb-9438-e518b6350617)
+![IMG_0292](https://media.git.generalassemb.ly/user/27368/files/a5615300-0be4-11eb-8f8e-277d903ecd2b)
