@@ -3,23 +3,23 @@ package com.aquent.crudapp.person;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Controller for handling basic person management operations.
  */
-@Controller
+@RestController
 @RequestMapping("person")
 public class PersonController {
 
     public static final String COMMAND_DELETE = "Delete";
 
+//    Using autowired here will allow spring to find the
+//    service Class with the logic we need, even though we never
+//    directly refer to the class, only the interface.
+    @Autowired
     private final PersonService personService;
 
     public PersonController(PersonService personService) {

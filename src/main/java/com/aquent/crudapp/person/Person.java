@@ -18,6 +18,7 @@ public class Person {
 //    Persistent fields
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "person_id")
     private Integer personId;
 
     @NotNull
@@ -49,9 +50,10 @@ public class Person {
     private String zipCode;
 
 //    person has one-to-many relationship with clients:
+//     orphanRemoval = true -- threw a decompiler warning
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "person_id", referencedColumnName = "personId")
-    List<Client> clients = new ArrayList<>();
+    private List<Client> clients = new ArrayList<>();
 
     public List<Client> getClients() {
         return clients;
@@ -60,16 +62,8 @@ public class Person {
     public void setClients(List<Client> clients) {
         this.clients = clients;
     }
-//    public Person(Integer personId, String firstName, String lastName, String emailAddress, String streetAddress, String city, String state, String zipCode) {
-//        this.personId = personId;
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.emailAddress = emailAddress;
-//        this.streetAddress = streetAddress;
-//        this.city = city;
-//        this.state = state;
-//        this.zipCode = zipCode;
-//    }
+
+//    May need helper methods ^ to specify that client getters and setters apply to this field 'clients'
 
     public Person(){}
 

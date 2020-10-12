@@ -7,7 +7,9 @@ import java.util.Set;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
  * Default implementation of {@link PersonService}.
  */
 @Component
+@Service
 public class DefaultPersonService implements PersonService {
 
     private final PersonDao personDao;
